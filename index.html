@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Falcor with NodeJS and Express Demo</title>
+</head>
+<body>
+    <h1 id="message"></h1>
+</body>
+<script src="node_modules/falcor/dist/falcor.browser.js"></script>
+<script>
+    var model = new falcor.Model({
+        source: new falcor.HttpDataSource('/myMessage.json')
+    });
+    model.get("detailText")
+      .then(function(response) {
+        var message = document.getElementById("message");
+        message.innerText = response.json.detailText
+    });
+</script>
+</html>
