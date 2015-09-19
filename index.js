@@ -1,7 +1,7 @@
-var falcorExpress = require('falcor-express');
-var Router = require('falcor-router');
-var express = require('express');
-var app = express();
+var falcorExpress = require('falcor-express'),
+    Router = require('falcor-router'),
+    express = require('express'),
+    app = express();
 app.use('/myMessage.json',
     falcorExpress.dataSourceRoute(function (req, res) {
     return new Router([
